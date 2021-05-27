@@ -14,7 +14,7 @@ app.use('/api/user',UserRoute)
 app.use('/api/post', PostRoute)
 app.use('/',express.static(__dirname+'/public'))
 
-db.sync().then(() => {
+db.sync({force:true}).then(() => {
      app.listen(SERVER_PORT,() => {
         console.log("Server connected at http://localhost:4444");
     })
