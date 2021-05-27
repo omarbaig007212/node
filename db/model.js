@@ -2,6 +2,8 @@ const sequelize = require('sequelize')
 
 let db;
 
+// db= new sequelize("postgres://qswpvisekfdzsy:f90810231018de8a36109f73082bb1084cb14441a8857a9c7d88b00d9b835c8d@ec2-52-4-111-46.compute-1.amazonaws.com:5432/d7aefuectijci9");
+
 if(process.env.DATABASE_URL){
     db = new sequelize(process.env.DATABASE_URL);
 }
@@ -12,7 +14,7 @@ else{
     })
 }
 
-// const db=new sequelize({
+// db=new sequelize({
 //     dialect: 'postgres',
 //     database: 'd1jspir78fgplq',
 //     username: 'jwtpyqytmzizqq',
