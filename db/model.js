@@ -8,9 +8,9 @@ if(process.env.DATABASE_URL){
     db = new sequelize(process.env.DATABASE_URL);
 }
 else{
-    db = new sequelize({
-        dialect:'sqlite',
-        storage:__dirname+'/test.db'
+    db = new sequelize('socialapp','socialuser','socialuser',{
+        host:'localhost',
+        dialect:'mysql'
     })
 }
 

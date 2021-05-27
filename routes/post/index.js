@@ -3,7 +3,8 @@ const { createNewPost,getAllPosts } = require('../../controllers/post')
 const route = Router()
 
 route.get('/', async (req,res) => {
-    const posts = await getAllPosts()
+    
+    const posts = await getAllPosts(req.query)
     res.status(200).send(posts)
 })
 
