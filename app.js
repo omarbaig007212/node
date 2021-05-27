@@ -3,6 +3,7 @@ const { db } = require('./db/model')
 const { UserRoute } = require('./routes/user')
 const { PostRoute } = require('./routes/post')
 
+const SERVER_PORT = process.env.PORT || 4444;
 
 const app = express()
 
@@ -14,7 +15,7 @@ app.use('/api/post', PostRoute)
 app.use('/',express.static(__dirname+'/public'))
 
 db.sync().then(() => {
-     app.listen(4444,() => {
+     app.listen(SERVER_PORT,() => {
         console.log("Server connected at http://localhost:4444");
     })
 }).catch((err) => {
