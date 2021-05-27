@@ -3,7 +3,7 @@ const sequelize = require('sequelize')
 let db;
 
 if(process.env.DATABASE_URL){
-    db=new Sequelize(process.env.DATABASE_URL);
+    db=new sequelize(process.env.DATABASE_URL);
 }
 else{
     db = new sequelize('socialapp','socialuser','socialuser',{
