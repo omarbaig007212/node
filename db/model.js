@@ -1,12 +1,24 @@
 const sequelize = require('sequelize')
 
-const db=new sequelize({
-    dialect: 'postgres',
-    database: 'd1jspir78fgplq',
-    username: 'jwtpyqytmzizqq',
-    password: 'b7943d2c2ffa23945fb9954ed1a95266e0d37cacc1cd5d5967f6099a16890855',
-    host: 'ec2-52-5-247-46.compute-1.amazonaws.com'
-})
+let db;
+
+if(process.env.DATABASE_URL){
+    db = new sequelize(process.env.DATABASE_URL);
+}
+else{
+    db = new sequelize({
+        dialect:'sqlite',
+        storage:__dirname+'/test.db'
+    })
+}
+
+// const db=new sequelize({
+//     dialect: 'postgres',
+//     database: 'd1jspir78fgplq',
+//     username: 'jwtpyqytmzizqq',
+//     password: 'b7943d2c2ffa23945fb9954ed1a95266e0d37cacc1cd5d5967f6099a16890855',
+//     host: 'ec2-52-5-247-46.compute-1.amazonaws.com'
+// })
 
 const COL_ID_DEF={
     type: sequelize.DataTypes.INTEGER,
