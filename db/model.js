@@ -2,25 +2,26 @@ const sequelize = require('sequelize')
 
 let db;
 
-// db= new sequelize("postgres://qswpvisekfdzsy:f90810231018de8a36109f73082bb1084cb14441a8857a9c7d88b00d9b835c8d@ec2-52-4-111-46.compute-1.amazonaws.com:5432/d7aefuectijci9");
+db=new sequelize({
+    dialect: 'mysql',
+    database: '5ZC8zQHPP5',
+    username: '5ZC8zQHPP5',
+    password: 'irln7q81ee',
+    host: 'remotemysql.com'
+})
 
-if(process.env.DATABASE_URL){
-    db = new sequelize(process.env.DATABASE_URL);
-}
-else{
-    db = new sequelize('socialapp','socialuser','socialuser',{
-        host:'localhost',
-        dialect:'mysql'
-    })
-}
+// db= new sequelize("postgres://ygsmduxfvuktdy:803e293e096f5f66fc0e1211b9167d97d7e2c62ad78f91fabac0276ed5e9a387@ec2-54-160-96-70.compute-1.amazonaws.com:5432/da4pam25la1dgv");
 
-// db=new sequelize({
-//     dialect: 'postgres',
-//     database: 'd1jspir78fgplq',
-//     username: 'jwtpyqytmzizqq',
-//     password: 'b7943d2c2ffa23945fb9954ed1a95266e0d37cacc1cd5d5967f6099a16890855',
-//     host: 'ec2-52-5-247-46.compute-1.amazonaws.com'
-// })
+// if(process.env.DATABASE_URL){
+//     db = new sequelize("process.env.DATABASE_URL");
+// }
+// else{
+//     db = new sequelize('socialapp','socialuser','socialuser',{
+//         host:'localhost',
+//         dialect:'mysql'
+//     })
+// }
+
 
 const COL_ID_DEF={
     type: sequelize.DataTypes.INTEGER,
